@@ -1,0 +1,77 @@
+/* Fondo principal de la página */
+body {
+    background-color: #FFF1DB;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor del formulario */
+.form {
+    background-color: #D4BDAC; /* Fondo del formulario */
+    border-radius: 8px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Título del formulario */
+.titulo {
+    font-size: 24px;
+    color: #536493; /* Azul oscuro */
+    margin-bottom: 20px;
+}
+
+/* Etiquetas de cada campo */
+.Labels {
+    display: block;
+    color: #536493;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Estilos de los inputs */
+.inputLandS {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #88C273; /* Verde claro */
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Botón de registro */
+.LoginandSignUp-btn {
+    background-color: #88C273; /* Verde claro */
+    color: #FFF1DB; /* Fondo claro */
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.LoginandSignUp-btn:hover {
+    background-color: #536493; /* Azul oscuro */
+}
+
+.LoginandSignUp-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(136, 194, 115, 0.5); /* Sombreado en verde claro */
+}
+
+/* Sección de mensajes de error o éxito */
+p {
+    color: #536493; /* Azul oscuro */
+    font-size: 14px;
+    margin-top: 15px;
+}

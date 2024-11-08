@@ -1,0 +1,56 @@
+/* src/styles/Dashboard.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFF1DB; /* Color de fondo principal */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.dashboard {
+    background-color: #D4BDAC; /* Fondo del panel */
+    border-radius: 8px;
+    padding: 30px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #536493;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.dashboard-button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFF1DB;
+    background-color: #88C273; /* Color principal de los botones */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-button:hover {
+    background-color: #536493; /* Color de los botones al pasar el ratón */
+}
+
+.dashboard-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(136, 194, 115, 0.5); /* Resalta el botón al enfocarlo */
+}
