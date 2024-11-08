@@ -21,7 +21,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
+h1, h2 {
     color: #536493;
     margin-bottom: 20px;
     font-size: 24px;
@@ -29,28 +29,23 @@ h1 {
 
 .button-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 15px;
     margin-top: 20px;
 }
 
 .dashboard-button {
     padding: 12px 20px;
-    font-size: 16px;
+    font-size: 24px;
     font-weight: bold;
-    color: #FFF1DB;
-    background-color: #88C273; /* Color principal de los botones */
+    color: #536493;
+    background-color: transparent; /*ransparente */
     border: none;
-    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .dashboard-button:hover {
-    background-color: #536493; /* Color de los botones al pasar el ratón */
+    color:  #88C273; /* Color de los botones al pasar el ratón */
 }
 
-.dashboard-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(136, 194, 115, 0.5); /* Resalta el botón al enfocarlo */
-}

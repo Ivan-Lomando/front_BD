@@ -3,12 +3,12 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import InstructoresAlta from './pages/InstructoresAlta';
-import InstructoresVer from './pages/InstructoresVer';
+import Instructores from './pages/Instructores';
 import TurnosAlta from './pages/TurnosAlta';
-import TurnosVer from './pages/TurnosVer';
-import ActividadesVer from './pages/ActividadesVer';
+import Turnos from './pages/Turnos';
+import Actividades from './pages/Actividades';
 import AlumnosAlta from './pages/AlumnosAlta';
-import AlumnosVer from './pages/AlumnosVer';
+import Alumnos from './pages/Alumnos';
 
 function App() {
     return (
@@ -22,10 +22,13 @@ function App() {
                 <Route path="/alumnos/alta" element={<AlumnosAlta />} />
                 
                 {/* Rutas para Ver */}
-                <Route path="/instructores/ver" element={<InstructoresVer />} />
-                <Route path="/turnos/ver" element={<TurnosVer />} />
-                <Route path="/actividades/ver" element={<ActividadesVer />} />
-                <Route path="/alumnos/ver" element={<AlumnosVer />} />
+                <Route path="/instructores" element={<Instructores/>} />
+                <Route path="/turnos" element={<Turnos />} />
+                <Route path="/actividades" element={<Actividades/>} />
+
+
+
+                <Route path="/alumnos" element={<Alumnos/>} />
             </Routes>
         </Router>
     );
