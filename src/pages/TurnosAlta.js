@@ -30,7 +30,7 @@ const TurnosAlta = () => {
 
             if (response.ok) {
                 setMessage('Turno registrado exitosamente');
-                navigate('/ver-turnos'); // Cambia esta ruta según tu configuración
+                navigate('/'); // Cambia esta ruta según tu configuración
             } else {
                 setMessage(data.message || 'Error en el registro');
             }

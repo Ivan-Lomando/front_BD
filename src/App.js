@@ -6,7 +6,6 @@ import InstructoresAlta from './pages/InstructoresAlta';
 import InstructoresVer from './pages/InstructoresVer';
 import TurnosAlta from './pages/TurnosAlta';
 import TurnosVer from './pages/TurnosVer';
-import ActividadesAlta from './pages/ActividadesAlta';
 import ActividadesVer from './pages/ActividadesVer';
 import AlumnosAlta from './pages/AlumnosAlta';
 import AlumnosVer from './pages/AlumnosVer';
@@ -20,7 +19,6 @@ function App() {
                 {/* Rutas para Alta */}
                 <Route path="/instructores/alta" element={<InstructoresAlta />} />
                 <Route path="/turnos/alta" element={<TurnosAlta />} />
-                <Route path="/actividades/alta" element={<ActividadesAlta />} />
                 <Route path="/alumnos/alta" element={<AlumnosAlta />} />
                 
                 {/* Rutas para Ver */}

@@ -11,10 +11,9 @@ export default function Dashboard() {
             <h1>Administración de la Escuela de Deportes</h1>
             <div className="button-container">
                 {/* Botones para ABM */}
-                <button className="dashboard-button" onClick={() => navigate('/instructores/alta')}>Alta de Instructores</button>
-                <button className="dashboard-button" onClick={() => navigate('/turnos/alta')}>Alta de Turnos</button>
-                <button className="dashboard-button" onClick={() => navigate('/actividades/alta')}>Alta de Actividades</button>
-                <button className="dashboard-button" onClick={() => navigate('/alumnos/alta')}>Alta de Alumnos</button>
+                <button className="dashboard-button" onClick={() => navigate('/instructores/alta')}>Agregar Instructor</button>
+                <button className="dashboard-button" onClick={() => navigate('/turnos/alta')}>Agregar Turno</button>
+                <button className="dashboard-button" onClick={() => navigate('/alumnos/alta')}>Agregar Alumno</button>
 
                 {/* Botones para Ver */}
                 <button className="dashboard-button" onClick={() => navigate('/instructores/ver')}>Ver Instructores</button>

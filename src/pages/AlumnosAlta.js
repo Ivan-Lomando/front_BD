@@ -32,7 +32,7 @@ const AlumnosAlta = () => {
 
             if (response.ok) {
                 setMessage('Alumno registrado exitosamente');
-                navigate('/ver-alumnos'); // Redirigir a la página para ver todos los alumnos
+                navigate('/'); // Redirigir a la página para ver todos los alumnos
             } else {
                 setMessage(data.message || 'Error en el registro');
             }

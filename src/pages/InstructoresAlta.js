@@ -30,7 +30,7 @@ const InstructoresAlta = () => {
 
             if (response.ok) {
                 setMessage('Instructor registrado exitosamente');
-                navigate('/ver-instructores'); // Cambia esta ruta según tu configuración
+                navigate('/'); // Cambia esta ruta según tu configuración
             } else {
                 setMessage(data.message || 'Error en el registro');
             }
