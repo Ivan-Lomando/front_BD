@@ -1,3 +1,25 @@
+
+Setup: 
+Lo más básico y que siempre se instala para una app en react es:
+npm install
+
+Esto nos va a instalar todas las dependencias necesarias para que un proyecto de React compile.
+
+Funcionamiento: 
+
+Debido a la naturaleza de un proyecto en React se podrán encontrar muchas carpetas y archivos distintos, pero el funcionamiento principal de nuestro programa estará contenido en la carpeta src, más específicamente en “pages”. 
+Allí se encontrarán carpetas para cada clase de nuestro programa.
+Dichas carpetas tendrán archivos de conexión para los métodos de las respectivas clases y archivos “css” que se encargan de dar estilo y mejorar la estética del programa.
+En el archivo “app.js” se contendrá la lógica entera de rutas de nuestro proyecto. Se van a definir las rutas de navegación posibles del programa.
+
+Para movernos entre carpetas será el mismo comportamiento que en el backend, se utiliza cd para entrar y salir de las carpetas.
+Sin embargo, en esta parte no será necesario ingresar a cada carpeta y ejecutar las clases a mano.
+Simplemente hay que pararse en la raíz del proyecto y ejecutar el comando “npm run start”, esto levantará el programa en el puerto establecido y estará corriendo.
+El puerto establecido es el 3000, pero se puede cambiar en el archivo package.json.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
