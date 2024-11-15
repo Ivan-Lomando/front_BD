@@ -1,38 +1,36 @@
+// src/pages/InstructoresAlta.js
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import '../styles/Login&SignUp.css';
+import '../../styles/Login&SignUp.css';
 
-const AlumnosAlta = () => {
-    const [ciAlumno, setCiAlumno] = useState('');
+const InstructoresAlta = () => {
+    const [ciInstructor, setCiInstructor] = useState('');
     const [nombre, setNombre] = useState('');
     const [apellido, setApellido] = useState('');
-    const [fechaNacimiento, setFechaNacimiento] = useState('');
     const [message, setMessage] = useState('');
     const navigate = useNavigate();
 
-    // Función para manejar el registro de un nuevo alumno
-    const handleAddAlumno = async (e) => {
+    const handleAddInstructor = async (e) => {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://127.0.0.1:5000/api/alumnos', {
+            const response = await fetch('http://127.0.0.1:5000/api/instructores', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ 
-                    ci_alumno: ciAlumno,
+                body: JSON.stringify({
+                    ci_instructor: ciInstructor,
                     nombre,
-                    apellido,
-                    fecha_nacimiento: fechaNacimiento 
+                    apellido
                 }),
             });
 
             const data = await response.json();
 
             if (response.ok) {
-                setMessage('Alumno registrado exitosamente');
-                navigate('/'); // Redirigir a la página para ver todos los alumnos
+                setMessage('Instructor registrado exitosamente');
+                navigate('/'); // Cambia esta ruta según tu configuración
             } else {
                 setMessage(data.message || 'Error en el registro');
             }
@@ -43,15 +41,15 @@ const AlumnosAlta = () => {
     };
 
     return (
-        <form className="form" onSubmit={handleAddAlumno}>
-            <h1 className="titulo">Registro de Alumno</h1>
+        <form className="form" onSubmit={handleAddInstructor}>
+            <h1 className="titulo">Registro de Instructor</h1>
 
-            <label className="Labels">CI Alumno</label>
+            <label className="Labels">CI Instructor</label>
             <input
                 className="inputLandS"
                 type="text"
-                value={ciAlumno}
-                onChange={(e) => setCiAlumno(e.target.value)}
+                value={ciInstructor}
+                onChange={(e) => setCiInstructor(e.target.value)}
                 required
             />
 
@@ -73,24 +71,15 @@ const AlumnosAlta = () => {
                 required
             />
 
-            <label className="Labels">Fecha de Nacimiento</label>
-            <input
-                className="inputLandS"
-                type="date"
-                value={fechaNacimiento}
-                onChange={(e) => setFechaNacimiento(e.target.value)}
-                required
-            />
-
             <div className="LoginButtonSection">
                 <div className="group1">
-                    <button className="LoginandSignUp-btn" type="submit">Registrar Alumno</button>
+                    <button className="LoginandSignUp-btn" type="submit">Registrar Instructor</button>
                 </div>
             </div>
 
             {message && <p>{message}</p>}
         </form>
     );
-}
+};
 
-export default AlumnosAlta;
+export default InstructoresAlta;

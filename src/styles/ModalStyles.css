@@ -1,0 +1,57 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #FFF1DB;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.titulo {
+    color: #536493;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.button-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.agregar-btn {
+    background-color: #88C273;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.agregar-btn:hover {
+    background-color: #6FA259;
+}
+
+.volver-btn {
+    background-color: #536493;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.volver-btn:hover {
+    background-color: #414C71;
+}

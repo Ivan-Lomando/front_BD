@@ -23,6 +23,9 @@ export default function Dashboard() {
                 <div>
                     <button className="dashboard-button" onClick={() => navigate('/actividades')}>Actividades</button>
                 </div>
+                <div>
+                    <button className="dashboard-button" onClick={() => navigate('/clases')}>Clases</button>
+                </div>
             </div>
         </div>
     );

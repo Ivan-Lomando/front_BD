@@ -1,0 +1,56 @@
+.form {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #FFF1DB;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form h1 {
+    text-align: center;
+    color: #536493;
+}
+
+.Labels {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #536493;
+}
+
+.inputLandS {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 20px;
+    border: 1px solid #D4BDAC;
+    border-radius: 4px;
+    background-color: #FFF;
+}
+
+.inputLandS:focus {
+    outline: none;
+    border-color: #88C273;
+    box-shadow: 0 0 5px rgba(136, 194, 115, 0.5);
+}
+
+.LoginButtonSection {
+    display: flex;
+    justify-content: space-between;
+}
+
+.LoginButtonSection button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFF;
+    background-color: #536493;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.LoginButtonSection button:hover {
+    background-color: #88C273;
+}

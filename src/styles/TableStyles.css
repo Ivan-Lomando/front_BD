@@ -1,0 +1,162 @@
+/* Estilos para el contenedor principal */
+.alumnos-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #FFF1DB;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el título */
+h1.titulo {
+    text-align: center;
+    color: #536493;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+/* Estilos para los botones de agregar y volver */
+.alumnos-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.agregar-btn, .volver-btn {
+    background-color: #88C273;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.agregar-btn:hover {
+    background-color: #6FA259;
+}
+
+.volver-btn {
+    background-color: #536493;
+}
+
+.volver-btn:hover {
+    background-color: #414C71;
+}
+
+/* Estilos para el mensaje de error */
+.error-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de la tabla */
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #D4BDAC;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #88C273;
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    background-color: #FFF1DB;
+}
+
+/* Estilos para los botones de la tabla */
+.table-actions button {
+    background-color: #536493;
+    color: white;
+    padding: 5px 10px;
+    margin: 2px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.table-actions button:hover {
+    background-color: #88C273;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: #FFF1DB;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 90%;
+}
+
+.modal h2 {
+    color: #536493;
+    margin-bottom: 20px;
+}
+
+.modal label {
+    display: block;
+    margin-bottom: 5px;
+    color: #536493;
+}
+
+.modal input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #D4BDAC;
+    border-radius: 4px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-buttons button {
+    background-color: #88C273;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-buttons button:hover {
+    background-color: #6FA259;
+}
