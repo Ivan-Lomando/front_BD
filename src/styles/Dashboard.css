@@ -15,8 +15,8 @@ body {
     background-color: #D4BDAC; /* Fondo del panel */
     border-radius: 8px;
     padding: 30px;
-    width: 80%;
-    max-width: 500px;
+    width: 90%; /* Incrementamos el ancho máximo */
+    max-width: 600px; /* Aumentamos el tamaño máximo del contenedor */
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -29,23 +29,41 @@ h1, h2 {
 
 .button-container {
     display: flex;
-    flex-direction: row;
-    gap: 15px;
+    justify-content: space-between; /* Espaciado uniforme entre botones */
+    flex-wrap: wrap; /* Permite que los botones se ajusten en varias líneas si es necesario */
+    gap: 15px; /* Espaciado entre los botones */
     margin-top: 20px;
 }
 
 .dashboard-button {
     padding: 12px 20px;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
     color: #536493;
-    background-color: transparent; /*ransparente */
-    border: none;
+    background-color: transparent; /* Fondo transparente */
+    border: 2px solid #536493; /* Borde visible */
+    border-radius: 5px; /* Bordes redondeados */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    flex: 1 1 calc(30% - 15px); /* Tamaño flexible para ocupar un 30% del ancho con espacio */
+    max-width: 180px; /* Evita que los botones sean demasiado grandes */
+    text-align: center;
 }
 
 .dashboard-button:hover {
-    color:  #88C273; /* Color de los botones al pasar el ratón */
+    background-color: #88C273; /* Fondo verde al pasar el ratón */
+    color: #FFF1DB; /* Texto claro al pasar el ratón */
 }
 
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 600px) {
+    .button-container {
+        flex-direction: column; /* En pantallas pequeñas, los botones se apilan */
+        gap: 10px;
+    }
+
+    .dashboard-button {
+        flex: none; /* Los botones ocupan todo el ancho disponible */
+        width: 100%;
+    }
+}

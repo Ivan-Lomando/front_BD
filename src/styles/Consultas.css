@@ -1,0 +1,87 @@
+.consultas-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFF1DB;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.titulo {
+    text-align: center;
+    color: #536493;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.consultas-buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.consultas-buttons button {
+    background-color: #88C273;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-width: 200px;
+}
+
+.consultas-buttons button:hover {
+    background-color: #6FA259;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.loading-message {
+    color: #536493;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.result-container {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #D4BDAC;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #88C273;
+    color: white;
+}
+
+td {
+    background-color: #FFF1DB;
+}
+
+.no-data {
+    text-align: center;
+    font-size: 18px;
+    color: #536493;
+    padding: 20px 0;
+}
+
+  

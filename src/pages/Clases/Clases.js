@@ -6,7 +6,7 @@ import ClaseEditar from './ClaseEditar';
 const Clases = () => {
   const [clases, setClases] = useState([]);
   const [message, setMessage] = useState('');
-  const [selectedClase, setSelectedClase] = useState(null);  // Estado para manejar la clase seleccionada
+  const [selectedClase, setSelectedClase] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -34,11 +34,11 @@ const Clases = () => {
   };
 
   const handleEdit = (clase) => {
-    setSelectedClase(clase);  // Establecer la clase seleccionada
+    setSelectedClase(clase);
   };
 
   const handleCloseModal = () => {
-    setSelectedClase(null);  // Cerrar el modal
+    setSelectedClase(null);
   };
 
   const handleSaveClase = (updatedClase) => {
@@ -48,9 +48,13 @@ const Clases = () => {
     setMessage('Clase actualizada exitosamente');
   };
 
+  const handleAgregarAlumnos = (idClase) => {
+    navigate(`/clases/${idClase}/alumnos`);
+  };
+
   return (
     <div className="clases-container">
-      <h1>Gestión de Clases</h1>
+      <h1 className="titulo">Gestión de Clases</h1>
       <div className="clases-buttons">
         <button className="agregar-btn" onClick={() => navigate("/clases/alta")}>
           Agregar Clase
@@ -59,40 +63,48 @@ const Clases = () => {
           Volver
         </button>
       </div>
-      {message && <p>{message}</p>}
-      <table>
-        <thead>
-          <tr>
-            <th>ID Clase</th>
-            <th>Instructor</th>
-            <th>Actividad</th>
-            <th>Turno</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {clases.length > 0 ? (
-            clases.map((clase) => (
-              <tr key={clase.id_clase}>
-                <td>{clase.id_clase}</td>
-                <td>{clase.ci_instructor}</td>
-                <td>{clase.id_actividad}</td>
-                <td>{clase.id_turno}</td>
-                <td>
-                  <button onClick={() => handleEdit(clase)}>Editar</button>
-                  <button onClick={() => handleDelete(clase.id_clase)}>Eliminar</button>
-                </td>
-              </tr>
-            ))
-          ) : (
+      {message && <p className="error-message">{message}</p>}
+      <div className="table-container">
+        <table>
+          <thead>
             <tr>
-              <td colSpan="5">No hay clases registradas</td>
+              <th>ID Clase</th>
+              <th>Instructor</th>
+              <th>Actividad</th>
+              <th>Turno</th>
+              <th>Acciones</th>
             </tr>
-          )}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {clases.length > 0 ? (
+              clases.map((clase) => (
+                <tr key={clase.id_clase}>
+                  <td>{clase.id_clase}</td>
+                  <td>{clase.ci_instructor}</td>
+                  <td>{clase.id_actividad}</td>
+                  <td>{clase.id_turno}</td>
+                  <td className="table-actions">
+                    <button className="edit-btn" onClick={() => handleEdit(clase)}>
+                      Editar
+                    </button>
+                    <button className="delete-btn" onClick={() => handleDelete(clase.id_clase)}>
+                      Eliminar
+                    </button>
+                    <button className="add-alumno-btn" onClick={() => handleAgregarAlumnos(clase.id_clase)}>
+                      Agregar Alumnos
+                    </button>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="5">No hay clases registradas</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
 
-      {/* Modal para editar la clase */}
       {selectedClase && (
         <ClaseEditar
           clase={selectedClase}

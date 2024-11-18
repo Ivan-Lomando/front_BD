@@ -27,7 +27,7 @@ const AltaClases = () => {
         setActividades(actividadesData);
         setTurnos(turnosData);
       })
-      .catch((error) => {
+      .catch(() => {
         setMessage("Error al cargar los datos.");
       });
   }, []);
@@ -46,8 +46,8 @@ const AltaClases = () => {
           ci_instructor: ciInstructor,
           id_actividad: idActividad,
           id_turno: idTurno,
-          dictada: dictada,
-          grupal: grupal,
+          dictada: dictada ? 1 : 0, // Convertir a 0 o 1
+          grupal: grupal ? 1 : 0,   // Convertir a 0 o 1
         }),
       });
 

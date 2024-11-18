@@ -1,4 +1,3 @@
-/* Estilos generales */
 .clases-container {
   max-width: 1200px;
   margin: 20px auto;
@@ -50,7 +49,6 @@
   margin-bottom: 20px;
 }
 
-/* Estilos para las tablas */
 .table-container {
   margin-top: 20px;
 }
@@ -60,8 +58,7 @@ table {
   border-collapse: collapse;
 }
 
-th,
-td {
+th, td {
   border: 1px solid #D4BDAC;
   padding: 10px;
   text-align: center;
@@ -76,18 +73,17 @@ td {
   background-color: #FFF1DB;
 }
 
-/* Estilos para los botones de acción */
-.edit-btn,
-.delete-btn {
-  padding: 5px 10px;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
+.table-actions button {
+  margin: 0 5px;
 }
 
 .edit-btn {
   background-color: #536493;
   color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 .edit-btn:hover {
@@ -97,13 +93,28 @@ td {
 .delete-btn {
   background-color: #C27373;
   color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 .delete-btn:hover {
   background-color: #A25959;
 }
 
-/* Estilos para el modal */
+.add-alumno-btn {
+  background-color: #88C273;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.add-alumno-btn:hover {
+  background-color: #6FA259;
+}
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -112,8 +123,8 @@ td {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   z-index: 1000;
 }
 
@@ -146,24 +157,6 @@ td {
   font-weight: bold;
 }
 
-.modal label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #536493;
-}
-
-.modal input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #D4BDAC;
-  border-radius: 5px;
-  background-color: #FFF;
-  font-size: 14px;
-}
-
-/* Estilos para los botones del modal */
 .modal-buttons {
   display: flex;
   justify-content: space-between;
@@ -195,5 +188,102 @@ td {
 }
 
 .modal-buttons .cancel-btn:hover {
+  background-color: #414C71;
+}
+.agregar-alumnos-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #FFF1DB;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.agregar-alumnos-container h1 {
+  text-align: center;
+  color: #536493;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.agregar-alumnos-container p {
+  text-align: center;
+  color: red;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.agregar-alumnos-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #536493;
+}
+
+.agregar-alumnos-container select,
+.agregar-alumnos-container input[type="radio"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #D4BDAC;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #FFF;
+  color: #536493;
+}
+
+.agregar-alumnos-container div {
+  margin-bottom: 20px;
+}
+
+.agregar-alumnos-container input[type="radio"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+.agregar-alumnos-container label > input {
+  display: inline-block;
+}
+
+.agregar-alumnos-container .radio-group {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
+}
+
+.agregar-alumnos-container .buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.agregar-alumnos-container button {
+  width: calc(50% - 10px);
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.agregar-alumnos-container button:first-child {
+  background-color: #88C273;
+  color: white;
+}
+
+.agregar-alumnos-container button:first-child:hover {
+  background-color: #6FA259;
+}
+
+.agregar-alumnos-container button:last-child {
+  background-color: #536493;
+  color: white;
+}
+
+.agregar-alumnos-container button:last-child:hover {
   background-color: #414C71;
 }
