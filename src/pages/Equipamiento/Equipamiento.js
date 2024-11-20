@@ -22,7 +22,7 @@ const Equipamiento = () => {
     <div className="equipamiento-container">
       <h1 className="titulo">Listado de Equipamiento</h1>
       <div className="equipamiento-buttons">
-        <button className="volver-btn" onClick={() => navigate('/')}>
+        <button className="volver-btn" onClick={() => navigate('/dashboard')}>
           Volver
         </button>
       </div>

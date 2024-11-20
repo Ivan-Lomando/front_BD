@@ -59,7 +59,7 @@ const Clases = () => {
         <button className="agregar-btn" onClick={() => navigate("/clases/alta")}>
           Agregar Clase
         </button>
-        <button className="volver-btn" onClick={() => navigate("/")}>
+        <button className="volver-btn" onClick={() => navigate("/dashboard")}>
           Volver
         </button>
       </div>

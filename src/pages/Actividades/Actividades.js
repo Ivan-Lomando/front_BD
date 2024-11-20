@@ -36,7 +36,7 @@ const Actividades = () => {
     <div className="actividades-container">
       <h1 className="titulo">Gestión de Actividades</h1>
       <div className="actividades-buttons">
-        <button className="volver-btn" onClick={() => navigate('/')}>
+        <button className="volver-btn" onClick={() => navigate('/dashboard')}>
           Volver
         </button>
       </div>

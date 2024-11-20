@@ -67,3 +67,19 @@ h1, h2 {
         width: 100%;
     }
 }
+.logout-button {
+    background-color: #C27373; /* Rojo claro */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.logout-button:hover {
+    background-color: #A25959; /* Rojo más oscuro */
+}

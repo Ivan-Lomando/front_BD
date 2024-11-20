@@ -44,7 +44,7 @@ const Instructores = () => {
         <button className="agregar-btn" onClick={() => navigate('/instructores/alta')}>
           Agregar Instructor
         </button>
-        <button className="volver-btn" onClick={() => navigate('/')}>
+        <button className="volver-btn" onClick={() => navigate('/dashboard')}>
           Volver
         </button>
       </div>

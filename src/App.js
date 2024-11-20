@@ -14,12 +14,14 @@ import AltaClases from './pages/Clases/AltaClases';
 import AgregarAlumnosAClase from './pages/Alumnos/AgregarAlumnosAClase';
 import Equipamiento from './pages/Equipamiento/Equipamiento';
 import Consultas from './pages/Consultas/Consultas';
+import Login from './pages/login/Login';
+import Register from './pages/login/Register';
 
 function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Dashboard />} />
+                <Route path="/dashboard" element={<Dashboard />} />
                 
                 {/* Rutas para Alta */}
                 <Route path="/instructores/alta" element={<InstructoresAlta />} />
@@ -40,6 +42,8 @@ function App() {
                 <Route path="/alumnos" element={<Alumnos/>} />
 
                 <Route path="/clases/:id_clase/alumnos" element={<AgregarAlumnosAClase />} />
+                <Route path="/" element={<Login />} />
+                <Route path="/register" element={<Register />} />
             </Routes>
         </Router>
     );

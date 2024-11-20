@@ -45,7 +45,7 @@ const Consultas = () => {
         <button onClick={() => handleConsulta("turnos")}>
           Turnos con más clases dictadas
         </button>
-        <button onClick={() => navigate("/")}>Volver</button>
+        <button onClick={() => navigate("/dashboard")}>Volver</button>
       </div>
       {loading && <p className="loading-message">Cargando...</p>}
       {message && <p className="error-message">{message}</p>}

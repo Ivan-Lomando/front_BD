@@ -40,7 +40,7 @@ const Turnos = () => {
         <button className="agregar-btn" onClick={() => navigate('/turnos/alta')}>
           Agregar Turno
         </button>
-        <button className="volver-btn" onClick={() => navigate('/')}>
+        <button className="volver-btn" onClick={() => navigate('/dashboard')}>
           Volver
         </button>
       </div>

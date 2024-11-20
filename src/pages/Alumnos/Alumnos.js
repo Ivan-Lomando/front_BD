@@ -40,7 +40,7 @@ const Alumnos = () => {
         <button className="agregar-btn" onClick={() => navigate('/alumnos/alta')}>
           Agregar Alumno
         </button>
-        <button className="volver-btn" onClick={() => navigate('/')}>
+        <button className="volver-btn" onClick={() => navigate('/dashboard')}>
           Volver
         </button>
       </div>

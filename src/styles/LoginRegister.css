@@ -1,0 +1,77 @@
+.login-container, .register-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFF1DB; /* Fondo principal */
+    text-align: center;
+    box-sizing: border-box; /* Incluir padding y borde en el ancho */
+}
+
+.login-container h2, .register-container h2 {
+    color: #536493; /* Color del texto */
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.login-container form, .register-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Asegura que el formulario se ajuste al contenedor */
+    gap: 15px; /* Espaciado entre campos */
+}
+
+.form-group {
+    text-align: left; /* Alinea las etiquetas a la izquierda */
+}
+
+.form-group label {
+    color: #536493; /* Color del texto */
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input {
+    width: 100%; /* Asegura que el input ocupe todo el ancho disponible */
+    padding: 10px;
+    border: 1px solid #D4BDAC;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #88C273; /* Color del borde en foco */
+}
+
+.button {
+    background-color: #88C273; /* Verde */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #6FA259; /* Verde más oscuro */
+}
+
+.link-button {
+    background: none;
+    border: none;
+    color: #536493;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.link-button:hover {
+    color: #414C71; /* Azul más oscuro */
+}
