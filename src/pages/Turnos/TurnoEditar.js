@@ -32,7 +32,14 @@ const TurnoEditar = ({ turno, onClose, onSave }) => {
         return response.json();
       })
       .then(() => {
-        onSave(formData);
+        
+        const updatedTurno = {
+          ...formData,
+          hora_inicio: mostrarSegundos(formData.hora_inicio),
+          hora_fin: mostrarSegundos(formData.hora_fin),
+        };
+
+        onSave(updatedTurno);
         onClose();
       })
       .catch((error) => {
@@ -43,6 +50,12 @@ const TurnoEditar = ({ turno, onClose, onSave }) => {
         setLoading(false);
       });
   };
+
+  const mostrarSegundos = (time) => {
+    // Asegurar que el formato sea hh:mm:ss
+    return time.length === 5 ? `${time}:00` : time;
+  };
+
 
   return (
     <div className="modal-overlay">

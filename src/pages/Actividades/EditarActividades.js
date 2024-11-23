@@ -25,24 +25,27 @@ const EditarActividades = ({ actividad, onClose, onSave }) => {
       },
       body: JSON.stringify(formData),
     })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Error al actualizar la actividad');
-        }
-        return response.json();
-      })
-      .then(() => {
-        onSave(formData);
-        onClose();
-      })
-      .catch((error) => {
-        console.error('Error al actualizar la actividad:', error);
-        setError('Hubo un problema al guardar los cambios.');
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  };
+    .then((response) => {
+      if (!response.ok) {
+        // Mostar error del back
+        return response.json().then((data) => {
+          throw new Error(data.error || data.message || 'Error desconocido');
+        });
+      }
+      return response.json();
+    })
+    .then(() => {
+      onSave(formData);
+      onClose();
+    })
+    .catch((error) => {
+      console.error('Error al actualizar la actividad:', error);
+      setError(error.message); // Mostrar el error del backend
+    })
+    .finally(() => {
+      setLoading(false);
+    });
+};
 
   return (
     <div className="modal-overlay">

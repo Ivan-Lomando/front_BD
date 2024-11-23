@@ -12,7 +12,13 @@ const Alumnos = () => {
   useEffect(() => {
     fetch('http://127.0.0.1:5000/api/alumnos')
       .then((response) => response.json())
-      .then((data) => setAlumnos(data))
+      .then((data) => {
+        const formattedData = data.map((alumno) => ({
+          ...alumno,
+          fecha_nacimiento: new Date(alumno.fecha_nacimiento).toISOString().split('T')[0], // Formatea la fecha a 'yyyy-mm-dd'
+        }));
+        setAlumnos(formattedData);
+      })
       .catch((error) => {
         console.error('Error al cargar los alumnos:', error);
         setMessage('Error al cargar los alumnos');

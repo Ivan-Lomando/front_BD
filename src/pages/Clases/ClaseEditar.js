@@ -37,13 +37,14 @@ const ClaseEditar = ({ clase, onSave, onClose }) => {
     try {
       // 1. Cambiar el instructor
       if (ciInstructor !== clase.ci_instructor) {
-        const instructorResponse = await fetch(`http://127.0.0.1:5000/api/clases/${idClase}/instructor`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ ci_instructor: ciInstructor }),
-        });
+        const instructorResponse = await fetch(`http://127.0.0.1:5000/api/clases/${idClase}/instructor`,    
+          { 
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ ci_instructor: ciInstructor }),
+          });
 
         if (!instructorResponse.ok) {
           const errorData = await instructorResponse.json();
@@ -53,7 +54,8 @@ const ClaseEditar = ({ clase, onSave, onClose }) => {
 
       // 2. Cambiar la actividad
       if (idActividad !== clase.id_actividad) {
-        const actividadResponse = await fetch(`http://127.0.0.1:5000/api/clases/${idClase}/actividad`, {
+        const actividadResponse = await fetch(`http://127.0.0.1:5000/api/clases/${idClase}/actividad`, 
+          {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -69,7 +71,8 @@ const ClaseEditar = ({ clase, onSave, onClose }) => {
 
       // 3. Cambiar el turno
       if (idTurno !== clase.id_turno) {
-        const turnoResponse = await fetch(`http://127.0.0.1:5000/api/clases/${idClase}/turno/${idTurno}`, {
+        const turnoResponse = await fetch(`http://127.0.0.1:5000/api/clases/${idClase}/turno/${idTurno}`, 
+          {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -84,7 +87,8 @@ const ClaseEditar = ({ clase, onSave, onClose }) => {
 
       // 4. Cambiar el tipo de clase (grupal o individual)
       if (grupal !== (clase.grupal ? 1 : 0)) {
-        const tipoResponse = await fetch(`http://127.0.0.1:5000/api/clases/${idClase}/tipo`, {
+        const tipoResponse = await fetch(`http://127.0.0.1:5000/api/clases/${idClase}/tipo`, 
+          {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -100,7 +104,8 @@ const ClaseEditar = ({ clase, onSave, onClose }) => {
 
       // 5. Cambiar el estado de la clase (dictada o no)
       if (dictada !== (clase.dictada ? 1 : 0)) {
-        const estadoResponse = await fetch(`http://127.0.0.1:5000/api/clases/${idClase}/estado`, {
+        const estadoResponse = await fetch(`http://127.0.0.1:5000/api/clases/${idClase}/estado`, 
+        {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -206,3 +211,6 @@ const ClaseEditar = ({ clase, onSave, onClose }) => {
 };
 
 export default ClaseEditar;
+
+
+

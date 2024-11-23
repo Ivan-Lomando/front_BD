@@ -87,9 +87,6 @@ const Clases = () => {
                     <button className="edit-btn" onClick={() => handleEdit(clase)}>
                       Editar
                     </button>
-                    <button className="delete-btn" onClick={() => handleDelete(clase.id_clase)}>
-                      Eliminar
-                    </button>
                     <button className="add-alumno-btn" onClick={() => handleAgregarAlumnos(clase.id_clase)}>
                       Agregar Alumnos
                     </button>

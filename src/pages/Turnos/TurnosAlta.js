@@ -30,9 +30,9 @@ const TurnosAlta = () => {
 
             if (response.ok) {
                 setMessage('Turno registrado exitosamente');
-                navigate('/'); // Cambia esta ruta según tu configuración
+                navigate('/turnos'); 
             } else {
-                setMessage(data.message || 'Error en el registro');
+                setMessage(data.error || 'Error en el registro');
             }
         } catch (error) {
             setMessage('Error en el servidor');

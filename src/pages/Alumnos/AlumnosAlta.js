@@ -32,9 +32,9 @@ const AlumnosAlta = () => {
 
             if (response.ok) {
                 setMessage('Alumno registrado exitosamente');
-                navigate('/'); // Redirigir a la página para ver todos los alumnos
+                navigate('/alumnos'); // Redirigir a la página para ver todos los alumnos
             } else {
-                setMessage(data.message || 'Error en el registro');
+                setMessage(data.error || 'Error en el registro'); //Mensaje de error especifico del back
             }
         } catch (error) {
             setMessage('Error en el servidor');

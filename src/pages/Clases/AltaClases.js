@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import '../../styles/Clases.css';
+import "../../styles/Clases.css";
 
 const AltaClases = () => {
   const [idClase, setIdClase] = useState('');
@@ -34,6 +34,7 @@ const AltaClases = () => {
 
   const handleAddClase = async (e) => {
     e.preventDefault();
+    setMessage(""); // Limpiar mensajes previos
 
     try {
       const response = await fetch('http://127.0.0.1:5000/api/clases', {
@@ -55,9 +56,9 @@ const AltaClases = () => {
 
       if (response.ok) {
         setMessage('Clase registrada exitosamente');
-        navigate('/clases');
+        navigate('/clases'); // Redirigir a la lista de clases
       } else {
-        setMessage(data.message || 'Error en el registro');
+        setMessage(data.message || 'Error en el registro'); // Mostrar el mensaje de error del backend
       }
     } catch (error) {
       setMessage('Error en el servidor');
@@ -83,6 +84,7 @@ const AltaClases = () => {
         onChange={(e) => setCiInstructor(e.target.value)}
         required
       >
+        <option value="">Seleccionar instructor</option>
         {instructores.map((instructor) => (
           <option key={instructor.ci_instructor} value={instructor.ci_instructor}>
             {instructor.nombre} {instructor.apellido}
@@ -96,6 +98,7 @@ const AltaClases = () => {
         onChange={(e) => setIdActividad(e.target.value)}
         required
       >
+        <option value="">Seleccionar actividad</option>
         {actividades.map((actividad) => (
           <option key={actividad.id_actividad} value={actividad.id_actividad}>
             {actividad.descripcion}
@@ -109,6 +112,7 @@ const AltaClases = () => {
         onChange={(e) => setIdTurno(e.target.value)}
         required
       >
+        <option value="">Seleccionar turno</option>
         {turnos.map((turno) => (
           <option key={turno.id_turno} value={turno.id_turno}>
             {turno.hora_inicio} - {turno.hora_fin}
@@ -131,9 +135,10 @@ const AltaClases = () => {
       />
 
       <button type="submit">Registrar Clase</button>
-      {message && <p>{message}</p>}
+      {message && <p className="error-message">{message}</p>}
     </form>
   );
 };
 
 export default AltaClases;
+
