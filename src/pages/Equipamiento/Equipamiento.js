@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../../styles/Equipamiento.css';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "../../styles/Equipamiento.css";
 
 const Equipamiento = () => {
   const navigate = useNavigate();
   const [equipamientos, setEquipamientos] = useState([]);
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     // Cargar equipamientos al montar el componente
-    fetch('http://127.0.0.1:5000/api/equipamiento')
+    fetch("http://127.0.0.1:5000/api/equipamiento")
       .then((response) => response.json())
       .then((data) => setEquipamientos(data))
       .catch((error) => {
-        console.error('Error al cargar los equipamientos:', error);
-        setMessage('Error al cargar los equipamientos');
+        console.error("Error al cargar los equipamientos:", error);
+        setMessage("Error al cargar los equipamientos");
       });
   }, []);
 
@@ -22,7 +22,7 @@ const Equipamiento = () => {
     <div className="equipamiento-container">
       <h1 className="titulo">Listado de Equipamiento</h1>
       <div className="equipamiento-buttons">
-        <button className="volver-btn" onClick={() => navigate('/dashboard')}>
+        <button className="volver-btn" onClick={() => navigate("/dashboard")}>
           Volver
         </button>
       </div>

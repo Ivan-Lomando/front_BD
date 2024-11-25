@@ -7,25 +7,12 @@ const AgregarAlumnosAClase = () => {
   const navigate = useNavigate();
   const [alumnos, setAlumnos] = useState([]);
   const [equipamientos, setEquipamientos] = useState([]);
-  const [clases, setClases] = useState([]); // Todas las clases
-  const [clase, setClase] = useState(null); // Clase seleccionada
-  const [ciAlumno, setCiAlumno] = useState('');
+  const [ciAlumno, setCiAlumno] = useState("");
   const [alquilados, setAlquilados] = useState(0); // 0 o 1
   const [idEquipamiento, setIdEquipamiento] = useState(null); // Null si no se alquila
   const [message, setMessage] = useState("");
 
-  // Cargar datos iniciales
   useEffect(() => {
-    // Cargar todas las clases y filtrar la clase actual
-    fetch("http://127.0.0.1:5000/api/clases")
-      .then((response) => response.json())
-      .then((data) => {
-        setClases(data);
-        const selectedClase = data.find((clase) => clase.id_clase === parseInt(id_clase));
-        setClase(selectedClase || null);
-      })
-      .catch(() => setMessage("Error al cargar las clases"));
-
     // Cargar lista de alumnos
     fetch("http://127.0.0.1:5000/api/alumnos")
       .then((response) => response.json())
@@ -35,26 +22,28 @@ const AgregarAlumnosAClase = () => {
     // Cargar lista de equipamientos
     fetch("http://127.0.0.1:5000/api/equipamiento")
       .then((response) => response.json())
-      .then((data) => setEquipamientos(data))
+      .then((data) => {
+        console.log("Equipamientos cargados:", data); // Depuración
+        setEquipamientos(data);
+      })
       .catch(() => setMessage("Error al cargar equipamientos"));
-  }, [id_clase]);
+  }, []);
 
   const handleAlquiladosChange = (value) => {
     setAlquilados(value);
-    if (value === 1 && clase) {
-      // Buscar equipamiento relacionado con la actividad de la clase
-      const equipamiento = equipamientos.find(
-        (e) => e.id_actividad === clase.id_actividad
-      );
-      setIdEquipamiento(equipamiento ? equipamiento.id_equipamiento : null);
-    } else {
-      setIdEquipamiento(null); // Si no alquila, id_equipamiento será null
+    if (value === 0) {
+      setIdEquipamiento(null); // Resetear el equipamiento si no alquila
     }
   };
 
   const handleAgregarAlumno = () => {
     if (!ciAlumno) {
       setMessage("Debes seleccionar un alumno.");
+      return;
+    }
+
+    if (alquilados === 1 && !idEquipamiento) {
+      setMessage("Debes seleccionar un equipamiento.");
       return;
     }
 
@@ -66,8 +55,8 @@ const AgregarAlumnosAClase = () => {
       body: JSON.stringify({
         id_clase: parseInt(id_clase), // Asegurar que sea número
         ci_alumno: ciAlumno,
-        alquilado: alquilados, // Enviar 0 o 1
-        id_equipamiento: idEquipamiento, // Enviar null si no se alquila
+        alquilado: alquilados, // 0 o 1
+        id_equipamiento: idEquipamiento, // Null si no se alquila
       }),
     })
       .then((response) => {
@@ -84,11 +73,13 @@ const AgregarAlumnosAClase = () => {
   return (
     <div className="agregar-alumnos-container">
       <h1>Agregar Alumno a la Clase</h1>
-      {message && <p>{message}</p>}
+      {message && <p className="error-message">{message}</p>}
 
-      <div>
-        <label>Seleccionar Alumno:</label>
+      {/* Dropdown de Alumnos */}
+      <div className="dropdown-section">
+        <label className="label">Seleccionar Alumno:</label>
         <select
+          className="dropdown"
           value={ciAlumno}
           onChange={(e) => setCiAlumno(e.target.value)}
         >
@@ -101,9 +92,10 @@ const AgregarAlumnosAClase = () => {
         </select>
       </div>
 
-      <div>
-        <label>Alquilar Equipamiento:</label>
-        <div>
+      {/* Radio Buttons para Alquilar Equipamiento */}
+      <div className="alquiler-section">
+        <label className="label">¿Alquilar Equipamiento?</label>
+        <div className="radio-group">
           <label>
             <input
               type="radio"
@@ -127,8 +119,34 @@ const AgregarAlumnosAClase = () => {
         </div>
       </div>
 
-      <button onClick={handleAgregarAlumno}>Agregar</button>
-      <button onClick={() => navigate("/clases")}>Volver</button>
+      {/* Dropdown de Equipamientos */}
+      {alquilados === 1 && (
+        <div className="dropdown-section">
+          <label className="label">Seleccionar Equipamiento:</label>
+          <select
+            className="dropdown"
+            value={idEquipamiento || ""}
+            onChange={(e) => setIdEquipamiento(e.target.value)}
+          >
+            <option value="">Seleccione un equipamiento</option>
+            {equipamientos.map((equipamiento) => (
+              <option key={equipamiento.id_equipamiento} value={equipamiento.id_equipamiento}>
+                {equipamiento.descripción} - ${equipamiento.costo}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
+
+      {/* Botones */}
+      <div className="button-group">
+        <button className="submit-btn" onClick={handleAgregarAlumno}>
+          Agregar
+        </button>
+        <button className="volver-btn" onClick={() => navigate("/clases")}>
+          Volver
+        </button>
+      </div>
     </div>
   );
 };
